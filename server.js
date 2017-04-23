@@ -23,7 +23,7 @@ app.get('/:datestring', (req, res) => {
     };
     if (dateParam) {
         const unixDate = Number(req.params.datestring);
-        const dateObj = null;
+        let dateObj = null;
         const formatDate = (toFormat) => {
             return dateFormat(toFormat, "mmmm d, yyyy", true);
         }
