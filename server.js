@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var dateFormat = require('dateformat');
+const express = require('express');
+const app = express();
+const path = require('path');
+const dateFormat = require('dateformat');
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static('javascript'));
@@ -13,29 +13,31 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:datestring', (req, res) => {
-    var dateParam = req.params.datestring;
+    const dateParam = req.params.datestring;
     if (!dateParam) {
         res.sendStatus(400);
     }
-    var objToReturn = {
+    const objToReturn = {
         unix: null,
         natural: null
     };
     if (dateParam) {
-        var unixDate = Number(req.params.datestring);
-        var dateObj = null;
+        const unixDate = Number(req.params.datestring);
+        const dateObj = null;
+        const formatDate = (toFormat) => {
+            return dateFormat(toFormat, "mmmm d, yyyy", true);
+        }
         if (Number.isInteger(unixDate)) {
-            var timeOffset = new Date().getTimezoneOffset() * 60000;
             dateObj = new Date(unixDate * 1000);
             if (dateObj.toString() !== 'Invalid Date') {
                 objToReturn.unix = unixDate;
-                objToReturn.natural = dateFormat(dateObj, "mmmm d, yyyy", true);
+                objToReturn.natural = formatDate(dateObj);
             }
         } else {
             dateObj = new Date(dateParam);
             if (dateObj.toString() !== 'Invalid Date') {
                 objToReturn.unix = dateObj.getTime() / 1000;
-                objToReturn.natural = dateFormat(dateObj, "mmmm d, yyyy", true);
+                objToReturn.natural = formatDate(dateObj);
             }
         }
     }
