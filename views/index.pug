@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    title Timestamp microservice
+    script(
+      type='text/javascript' 
+      src='https://code.jquery.com/jquery-3.2.1.min.js'
+      integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+      crossorigin='anonymous'
+      )
+  body
+    h1 Timestamp microservice
+    p.
+      This microservice API gives you the ability to send a date
+      as parameter and it will return the date formatted in natural
+      language and unix format. It will return null in the case that it doesn't
+      find a validly formatted date as input.
+    h3 Usage:
+    p.
+      Type in a date either as a Unix timestamp, or in the format M D, Y (example: December 31, 2017)
+    input(type='text' placeholder='Input value' id='data-input')
+    button(type='button' id='send-data') Send
+    Label <br/> <br/> Returned object: <br/>
+      code(id='return-object') null
+    h3 Example output:
+    code {"unix":1514707200,"natural":"December 31, 2017"}
+    script(type='text/javascript' src='/index.js')
+    
