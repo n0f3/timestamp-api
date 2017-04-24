@@ -14,13 +14,15 @@ where unix is Unix timestamp in seconds and natural is a string value representi
 ## Project structure
 ```
 .
-├── javascript
-│   └── index.js
 ├── package.json
 ├── Procfile
+├── public
+│   └── javascript
+│       └── index.js
 ├── README.md
+├── routes
+│   └── apiRoutes.js
 ├── server.js
 └── views
     └── index.pug
-
 ```

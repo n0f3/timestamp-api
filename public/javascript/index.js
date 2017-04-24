@@ -1,12 +1,10 @@
 $(function() {
-  $('#send-data').click(function(e) {
+  $('#send-data').on('click', (function(e) {
+    console.log('clicked');
     e.preventDefault();
     var input = $('#data-input').val();
     if (input !== 'undefined' && input !== '') {
-      $.ajax({
-        url: '/' + input,
-        data: input,
-      }).done(function(data, textStatus) {
+      $.get('/' + input).done(function(data, textStatus) {
         $('#return-object').html(data);
         
       }).fail(function(jqXHR, textStatus, errorThrown) {
@@ -15,5 +13,5 @@ $(function() {
         $('#data-input').val('');
       });
     }
-  })
+  }));
 });

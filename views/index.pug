@@ -8,6 +8,10 @@ html(lang="en")
       integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
       crossorigin='anonymous'
       )
+    script(
+      type='text/javascript'
+      src='https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.5/purify.min.js'
+    )
   body
     h1 Timestamp microservice
     p.
@@ -24,5 +28,5 @@ html(lang="en")
       code(id='return-object') null
     h3 Example output:
     code {"unix":1514707200,"natural":"December 31, 2017"}
-    script(type='text/javascript' src='/index.js')
+    script(type='text/javascript' src='/static/javascript/index.js')
     
