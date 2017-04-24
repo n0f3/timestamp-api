@@ -18,6 +18,6 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
     console.log('Node app is running on port', app.get('port'));
 });
