@@ -1,6 +1,7 @@
 # Timestamp microservice
 
 [![Run on Repl.it](https://repl.it/badge/github/n0f3/timestamp-api)](https://repl.it/github/n0f3/timestamp-api)
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/n0f3/timestamp-api)
 
 Simple microservice that accepts a date as parameter and will return a json object in the format:
 
