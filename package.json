@@ -1,5 +1,5 @@
 {
-  "name": "timestamp",
+  "name": "timestamp-microservice",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,13 +11,14 @@
   "author": "n0f3",
   "license": "ISC",
   "dependencies": {
-    "dateformat": "^2.0.0",
-    "express": "^4.14.0",
-    "express-validator": "^3.2.0",
-    "helmet": "^3.5.0",
-    "pug": "^2.0.0-beta9"
+    "dateformat": "3.0.3",
+    "express": "4.17.1",
+    "express-validator": "6.6.1",
+    "helmet": "4.1.1",
+    "pug": "3.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
-  }
+  },
+  "keywords": []
 }
