@@ -38,7 +38,6 @@ router.get('/', (req, res) => {
 router.get('/:datestring', (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.error(result.useFirstErrorOnly().array());
         res.sendStatus(400);
     }
     const dateParam = req.params.datestring;
