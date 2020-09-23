@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const expressValidator = require('express-validator');
+const { validationResult } = require('express-validator');
 const dateFormat = require('dateformat');
 
 const processDateParam = (dateParam) => {
@@ -36,20 +36,17 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:datestring', (req, res) => {
-    req.assert('datestring', 'Invalid datestring param').isAlphanumeric();
-    req.getValidationResult().then((result) => {
-        if (result.isEmpty()) {
-            // no errors
-            const dateParam = req.params.datestring;
-             if (!dateParam) {
-                res.sendStatus(400);
-            }
-            res.send(processDateParam(dateParam));
-        } else {
-            console.error(result.useFirstErrorOnly().array());
-            res.sendStatus(400);
-        }
-    });
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        console.error(result.useFirstErrorOnly().array());
+        res.sendStatus(400);
+    }
+    const dateParam = req.params.datestring;
+    if (!dateParam) {
+        res.sendStatus(400);
+    }
+    res.send(processDateParam(dateParam));
+
 });
 
 module.exports  = router;

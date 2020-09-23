@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const helmet = require('helmet');
 const routes = require('./routes/apiRoutes');
-const expressValidator = require('express-validator');
 const app = express();
 
 
@@ -13,7 +12,6 @@ app.set('view engine', 'pug');
 // security middleware
 app.use(helmet());
 // request validator middleware
-app.use(expressValidator());
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
