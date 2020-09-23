@@ -11,7 +11,7 @@ Simple microservice that accepts a date as parameter and will return a json obje
 
 where unix is Unix timestamp in seconds and natural is a string value representing the date in human readable format.
 
-## [Live Demo](https://4qx4g.sse.codesandbox.io//)
+## [Live Demo](https://4qx4g.sse.codesandbox.io)
 
 ## Project structure
 
